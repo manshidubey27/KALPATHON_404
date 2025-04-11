@@ -37,7 +37,7 @@ const App = () => {
                 query = query.ilike("scheme", `%${filters.scheme}%`);
             }
             if (filters.income) {
-                query = query.eq("income", filters.income);
+                query = query.lte("income", parseInt(filters.income,10));
             }
             if (filters.education) {
                 query = query.ilike("education", `%${filters.education}%`);
